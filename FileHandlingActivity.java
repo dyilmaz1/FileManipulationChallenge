@@ -10,8 +10,19 @@ public class FileHandlingActivity {
             mainDir.mkdir();
         }
         // b. Create three text files
+        File notesFile = new File(mainDir, "notes.txt");
+        File dataFile = new File(mainDir, "data.txt");
+        File logFile = new File(mainDir, "log.txt");
+        try {
+            notesFile.createNewFile();
+            dataFile.createNewFile();
+            logFile.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         
         // c. Write messages to files
+        
         
         // d. Read and display file contents
         
