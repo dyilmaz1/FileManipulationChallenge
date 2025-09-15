@@ -58,8 +58,11 @@ public class FileHandlingActivity {
             e.printStackTrace();
         }
 
-
         // e. Create backup directory
+        File backupDir = new File("JavaFileSystemBackup");
+        if (!backupDir.exists()) {
+            backupDir.mkdir();
+        }
         
         // f. Copy contents to backup file
         
