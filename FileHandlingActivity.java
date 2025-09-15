@@ -42,7 +42,23 @@ public class FileHandlingActivity {
         }
         
         // d. Read and display file contents
-        
+        try (BufferedReader notesReader = new BufferedReader(new FileReader(notesFile))) {
+            System.out.println("notes.txt: " + notesReader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (BufferedReader dataReader = new BufferedReader(new FileReader(dataFile))) {
+            System.out.println("data.txt: " + dataReader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (BufferedReader logReader = new BufferedReader(new FileReader(logFile))) {
+            System.out.println("log.txt: " + logReader.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         // e. Create backup directory
         
         // f. Copy contents to backup file
