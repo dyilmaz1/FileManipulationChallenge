@@ -81,5 +81,20 @@ public class FileHandlingActivity {
         }
         
         // g. List all files in both directories
+        System.out.println("Files in JavaFileSystem:");
+        File[] mainFiles = mainDir.listFiles();
+        if (mainFiles != null) {
+            for (File f : mainFiles) {
+                System.out.println(" - " + f.getName());
+            }
+        }
+
+        System.out.println("Files in JavaFileSystemBackup:");
+        File[] backupFiles = backupDir.listFiles();
+        if (backupFiles != null) {
+            for (File f : backupFiles) {
+                System.out.println(" - " + f.getName());
+            }
+        }
     }
 }
