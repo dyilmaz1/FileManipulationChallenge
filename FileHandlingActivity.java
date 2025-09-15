@@ -22,7 +22,24 @@ public class FileHandlingActivity {
         }
         
         // c. Write messages to files
-        
+        try (FileWriter notesWriter = new FileWriter(notesFile)) {
+            notesWriter.write("Welcome to your notes!");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (FileWriter dataWriter = new FileWriter(dataFile)) {
+            dataWriter.write("Data file initialized.");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (FileWriter logWriter = new FileWriter(logFile)) {
+            logWriter.write("Log started.");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
         
         // d. Read and display file contents
         
