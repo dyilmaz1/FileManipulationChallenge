@@ -65,6 +65,20 @@ public class FileHandlingActivity {
         }
         
         // f. Copy contents to backup file
+        File[] filesToCopy = mainDir.listFiles();
+        if (filesToCopy != null) {
+            for (File file : filesToCopy) {
+                File backupFile = new File(backupDir, file.getName());
+                try (
+                    FileInputStream in = new FileInputStream(file);
+                    FileOutputStream out = new FileOutputStream(backupFile)
+                ) {
+                    out.write(in.readAllBytes());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
         
         // g. List all files in both directories
     }
